@@ -6,29 +6,23 @@ using System.Threading.Tasks;
 
 namespace NetFlixRev0
 {
-    public class Title  //myBaseClass
+    public class Title  //myBaseClass also referred to as an object, includes fields lke name, rating
     {
-        private int RatingofMovie;
-        private string TitleOfMovie;
-        private string v1;
-        private double v2;
-
-        public Title(string name, int rating)  //overload constructor: takes in name and rating fields and sets them
-        {
-            TitleOfMovie = name;
-            RatingofMovie = rating;
-        }
+        public double? Rating;
+        public string Name;
+        public Genre Genre;
+      
         public Title()
         {
-            TitleOfMovie = null;
-            int? RatingOfMovie;
-            RatingOfMovie = null;
+            this.Rating = null;
+            this.Name = null;
+            this.Genre = null;
         }
-
-        public Title(string v1, double v2)
+        public Title(string name, double rating, Genre genre)
         {
-            this.v1 = v1;
-            this.v2 = v2;
+            this.Rating = rating;
+            this.Name = name;
+            this.Genre = genre;
         }
     }
 }

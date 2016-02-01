@@ -7,10 +7,19 @@ using System.Threading.Tasks;
 namespace NetFlixRev0
 {
     public class Movie : Title
-        //inherits Name and Rating from Title class
-        //duration field
-        //overrides ToString() method to return a string with name and duration of movie
     {
+        public int DurationInMinutes;
 
+        public Movie(string name, double rating, int durationInMin)
+        {
+            this.Name = name;
+            this.Rating = rating;
+            this.DurationInMinutes = durationInMin;
+
+        }
+        public override string ToString()
+        {
+            return (Name + " has a duration of : " + DurationInMinutes + " minutes.");
+        }
     }
 }

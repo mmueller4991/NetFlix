@@ -6,8 +6,15 @@ using System.Threading.Tasks;
 
 namespace NetFlixRev0
 {
-    class Episode
-        //Rating field
+    public class Episode
     {
+        public double Rating;
+        public string Name;
+
+        public Episode(double rating, string name)
+        {
+            this.Rating = rating;
+            this.Name = name;
+        }
     }
 }

@@ -10,12 +10,21 @@ namespace NetFlixRev0
     {
         static void Main(string[] args)
         {
-            Title myTitle = new Title(); // calls the class named "Title," then sets up fields for a new Title
-            Title title2 = new Title("Titanic", 4);
-            Title title3 = new Title("Spotlight", 4.5);
+            Catalog catalog = new Catalog();
+            ViewTitlesWithGenres viewtitleswithgenres = new ViewTitlesWithGenres();
+            Genre All = new Genre("All");
+            Genre Action = new Genre("Action");
+            Genre Romance = new Genre("Romance");
+            Genre Drama = new Genre("Drama");
 
-            Console.WriteLine(myTitle);
-            Console.ReadLine();
+            catalog.CreateAllTitlesList(All);
+            catalog.CreateActionTitlesList(Action, All);
+            catalog.CreateRomanceTitlesList(Romance, All);
+            catalog.CreateDramaTitlesList(Drama, All);
+            catalog.CreateGenreList(All, Action, Romance, Drama);
+            viewtitleswithgenres.DisplayGenresAndTitles(catalog.Genres);
+
+            Console.ReadKey();
         }
         
     }
